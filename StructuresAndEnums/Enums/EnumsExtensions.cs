@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using System.Linq;
-namespace Hometask1.Enums
+namespace StructuresAndEnums.Enums
 {
     public static class EnumsExtensions
     {

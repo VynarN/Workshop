@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Hometask1
+namespace StructuresAndEnums.Structures
 {
     public struct Rectangle: ICoordinates, ISize
     {   

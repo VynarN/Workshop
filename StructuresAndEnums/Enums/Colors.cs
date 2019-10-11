@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Hometask1.Enums
+namespace StructuresAndEnums.Enums
 {
     public enum Colors
     {

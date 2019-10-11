@@ -7,8 +7,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Hometask1\Hometask1.csproj" />
-    <ProjectReference Include="..\Hometask2.Exceptions\Hometask2.Exceptions.csproj" />
+    <ProjectReference Include="..\Exceptions\Exceptions.csproj" />
+    <ProjectReference Include="..\StructuresAndEnums\StructuresAndEnums.csproj" />
   </ItemGroup>
 
 </Project>
