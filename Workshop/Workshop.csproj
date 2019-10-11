@@ -3,10 +3,12 @@
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>netcoreapp2.2</TargetFramework>
+    <StartupObject>Workshop.WorkshopMain</StartupObject>
   </PropertyGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\Hometask1\Hometask1.csproj" />
+    <ProjectReference Include="..\Hometask2.Exceptions\Hometask2.Exceptions.csproj" />
   </ItemGroup>
 
 </Project>
