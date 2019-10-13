@@ -7,7 +7,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Workshop", "Workshop\Worksh
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StructuresAndEnums", "StructuresAndEnums\StructuresAndEnums.csproj", "{56AAB660-80BA-4581-B119-CD9D9EDDE003}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exceptions", "Exceptions\Exceptions.csproj", "{B3000ED9-4A21-4842-B79F-BBAF414E4F77}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Exceptions", "Exceptions\Exceptions.csproj", "{B3000ED9-4A21-4842-B79F-BBAF414E4F77}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Streams", "Streams\Streams.csproj", "{C57C24AB-A7A6-480C-B74A-385CC6F49AA8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{B3000ED9-4A21-4842-B79F-BBAF414E4F77}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B3000ED9-4A21-4842-B79F-BBAF414E4F77}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B3000ED9-4A21-4842-B79F-BBAF414E4F77}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C57C24AB-A7A6-480C-B74A-385CC6F49AA8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C57C24AB-A7A6-480C-B74A-385CC6F49AA8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C57C24AB-A7A6-480C-B74A-385CC6F49AA8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C57C24AB-A7A6-480C-B74A-385CC6F49AA8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
