@@ -5,12 +5,12 @@ namespace Workshop
 {
     public partial class WorkshopMain
     {
-        static int Padding = 0;
         public static void Main(string[] args)
         {
             //Hometask1();
             //Hometask2();
-            Hometask3();
+            //Hometask3();
+            LoggerDemo();
             Console.ReadKey();
 
         }
