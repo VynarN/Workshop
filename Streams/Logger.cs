@@ -7,7 +7,7 @@ namespace Streams
 {
     public class Logger: ICheckable<string>
     {
-        public string DefaultFile { get; private set; } = @"\log.txt";
+        public string DefaultFile { get; private set; } = Directory.GetCurrentDirectory() + "\\log.txt";
         public StreamWriter Writer { get; private set; }
 
         public Logger() { }
@@ -30,22 +30,14 @@ namespace Streams
         {
             using (Writer = new StreamWriter(DefaultFile, true))
             {
-
                 Writer.WriteLine(message);
             }
         }
 
         public bool Check(string path)
         {
-            if (String.IsNullOrEmpty(path) &&
-                    !Directory.Exists(path.Substring(0, path.LastIndexOf("\\"))))
-            {
-                return false;
-            }
-            else
-            {
-                return true;
-            }
+            return (!String.IsNullOrEmpty(path) &&
+                    Directory.Exists(path.Substring(0, path.LastIndexOf("\\"))));
         }
     }
 }

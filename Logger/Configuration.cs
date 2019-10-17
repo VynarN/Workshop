@@ -27,15 +27,8 @@ namespace Logger
 
         private bool IsEligible(string path)
         {
-            if (String.IsNullOrEmpty(path) ||
-                    !Directory.Exists(path.Substring(0, path.LastIndexOf("\\"))))
-            {
-                return false;
-            }
-            else
-            {
-                return true;
-            }
+            return (!String.IsNullOrEmpty(path) &&
+                    Directory.Exists(path.Substring(0, path.LastIndexOf("\\"))));
         }
     }
 }

@@ -14,5 +14,6 @@ namespace Streams
         {
             Console.WriteLine(message);
         }
+        
     }
 }

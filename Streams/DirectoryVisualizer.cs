@@ -31,7 +31,14 @@ namespace Streams
 
         public void Visualize()
         {
-            GetListOfFilesAndDirectories(Directory, 0);
+            try
+            {
+                GetListOfFilesAndDirectories(Directory, 0);
+            } catch (UnauthorizedAccessException e)
+            {
+                Logger.Log($"{this.GetType()}: {e.Message}");
+                UserInterface.Write(e.Message);
+            }
         }
 
         private void GetListOfFilesAndDirectories(string directory, int padding)
@@ -41,12 +48,15 @@ namespace Streams
             FileInfo[] files = currentDirrectory.GetFiles();
             foreach (var dir in directories)
             {
-                UserInterface.Write(MakePadding(padding) + dir.Name);
+                if (dir.Name.StartsWith("$"))
+                    continue;
+
+                UserInterface.Write(MakePadding(padding) + dir.Name + ":");
                 GetListOfFilesAndDirectories(dir.ToString(), padding + 2);
             }
             foreach (var file in files)
             {
-                UserInterface.Write(MakePadding(padding) + " " + file.Name);
+                UserInterface.Write(MakePadding(padding) + file.Name);
             }
         }
         private static string MakePadding(int padding)
@@ -60,15 +70,8 @@ namespace Streams
         }
         public bool Check(string path)
         {
-            if (String.IsNullOrEmpty(path) &&
-                    !IO.Directory.Exists(path.Substring(0, path.LastIndexOf("\\"))))
-            {
-                return false;
-            }
-            else
-            {
-                return true;
-            }
+            return (!String.IsNullOrEmpty(path) &&
+                    IO.Directory.Exists(path.Substring(0, path.LastIndexOf("\\"))));
         }
         
     }

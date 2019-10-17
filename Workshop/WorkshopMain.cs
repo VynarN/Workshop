@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
 
 namespace Workshop
@@ -9,8 +10,9 @@ namespace Workshop
         {
             //Hometask1();
             //Hometask2();
-            //Hometask3();
-            LoggerDemo();
+              Hometask3();
+            //LoggerDemo();
+            
             Console.ReadKey();
 
         }

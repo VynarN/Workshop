@@ -8,8 +8,10 @@ namespace Workshop
     {
         static void Hometask3()
         {
-            DirectoryVisualizer visualizer = new DirectoryVisualizer(@"D:\Downloads\Example", new ConsoleUI());
-            visualizer.Visualize();
+            //DirectoryVisualizer visualizer = new DirectoryVisualizer(@"D:\Downloads", new ConsoleUI());
+            //visualizer.Visualize();
+            FileSearcher fs = new FileSearcher("new");
+            Console.WriteLine($"File location: {fs.SearchFile()}");
         }
     }
 }
