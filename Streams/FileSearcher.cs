@@ -54,7 +54,7 @@ namespace Streams
         public string SearchFile()
         {
             UI.Write("This may take a few minutes.Please, do not close the window.");
-            UI.Write($"Warning: not all directories are accessible.To see which ones, look into {Logger.DefaultFile}");
+            UI.Write($"Warning: not all directories are accessible!\nTo see which ones, look into {Logger.DefaultFile}.");
             if (Filename != null)
             {
                 Search("D:\\");

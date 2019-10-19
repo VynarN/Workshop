@@ -8,13 +8,63 @@ namespace Workshop
     {
         public static void Main(string[] args)
         {
-            //Hometask1();
-            //Hometask2();
-              Hometask3();
-            //LoggerDemo();
-            
-            Console.ReadKey();
+            bool stop = false;
+            while (!stop)
+            {
+                Menu();
+                if (Int32.TryParse(Console.ReadLine(), out int option))
+                {
+                    switch (option)
+                    {
+                        case 1:
+                            Hometask1();
+                            DelayAndClear();
+                            break;
+                        case 2:
+                            Hometask2();
+                            DelayAndClear();
+                            break;
+                        case 3:
+                            Hometask3();
+                            DelayAndClear();
+                            break;
+                        case 4:
+                            Hometask4();
+                            DelayAndClear();
+                            break;
+                        case 5:
+                            LoggerDemo();
+                            break;
+                        case 0:
+                            stop = true;
+                            break;
+                        default:
+                            break;
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("Invalid input! Try again!");
+                    Console.Clear();
+                }
+            }
 
+        }
+        static void Menu()
+        {
+            Console.WriteLine("Available options:");
+            Console.WriteLine("Hometask #1 - press 1");
+            Console.WriteLine("Hometask #2 - press 2");
+            Console.WriteLine("Hometask #3 - press 3");
+            Console.WriteLine("Hometask #4 - press 4");
+            Console.WriteLine("LoggerDemo  - press 5");
+            Console.WriteLine("Exit        - press 0");
+        }
+        static void DelayAndClear()
+        {
+            Console.WriteLine("Press any key to continue...");
+            Console.ReadKey();
+            Console.Clear();
         }
     }
 }

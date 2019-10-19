@@ -27,7 +27,7 @@ namespace Workshop
             {
                 Console.WriteLine(e.Message);
             }
-            Console.WriteLine("Testin DoSomeMath function:");
+            Console.WriteLine("Testing DoSomeMath function:");
             ExceptionDemo.DoSomeMath(-2, 3);
             ExceptionDemo.DoSomeMath(2, 3);
         }

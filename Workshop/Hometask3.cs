@@ -8,9 +8,14 @@ namespace Workshop
     {
         static void Hometask3()
         {
-            //DirectoryVisualizer visualizer = new DirectoryVisualizer(@"D:\Downloads", new ConsoleUI());
-            //visualizer.Visualize();
-            FileSearcher fs = new FileSearcher("new");
+            Console.WriteLine("Enter directory you want visualize:");
+            string directory = Console.ReadLine();
+            DirectoryVisualizer visualizer = new DirectoryVisualizer(directory, new ConsoleUI());
+            visualizer.Visualize();
+            DelayAndClear();
+            Console.WriteLine("Enter a file name you are looking for:");
+            string filename = Console.ReadLine();
+            FileSearcher fs = new FileSearcher(filename);
             Console.WriteLine($"File location: {fs.SearchFile()}");
         }
     }
