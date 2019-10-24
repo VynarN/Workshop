@@ -8,5 +8,6 @@ namespace Streams.Interfaces
     {
         string Read();
         void Write(string message);
+        void WriteLine(string message);
     }
 }

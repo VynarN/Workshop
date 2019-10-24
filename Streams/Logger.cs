@@ -9,7 +9,6 @@ namespace Streams
     {
         public string DefaultFile { get; private set; } = Directory.GetCurrentDirectory() + "\\log.txt";
         public StreamWriter Writer { get; private set; }
-
         public Logger() { }
 
         public Logger(string path)

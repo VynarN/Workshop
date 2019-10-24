@@ -18,9 +18,9 @@ namespace Workshop
                 int c = a / b;
             }catch(ArithmeticException e)
             {
-                
-                mylogger.WriteMessage(e);
+                mylogger.Log(e);
             }
+            //mylogger.TurnOff();
             try
             {
                 string str = null;
@@ -28,8 +28,9 @@ namespace Workshop
             }
             catch(Exception e)
             {
-                mylogger.WriteMessage(e);
+                mylogger.Log(e);
             }
+            //mylogger.TurnOn();
             try
             {
                 int[] arr = new int[3];
@@ -37,9 +38,9 @@ namespace Workshop
             }
             catch (Exception e)
             {
-                mylogger.WriteMessage(e);
+                mylogger.Log(e);
             }
-            string errors = mylogger.ReadMessage();
+            string errors = mylogger.ReadLog();
             Console.WriteLine(errors);
         }
             

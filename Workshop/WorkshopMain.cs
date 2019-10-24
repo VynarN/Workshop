@@ -33,6 +33,9 @@ namespace Workshop
                             DelayAndClear();
                             break;
                         case 5:
+                            Hometask5();
+                            break;
+                        case 6:
                             LoggerDemo();
                             break;
                         case 0:
@@ -53,12 +56,13 @@ namespace Workshop
         static void Menu()
         {
             Console.WriteLine("Available options:");
-            Console.WriteLine("Hometask #1 - press 1");
-            Console.WriteLine("Hometask #2 - press 2");
-            Console.WriteLine("Hometask #3 - press 3");
-            Console.WriteLine("Hometask #4 - press 4");
-            Console.WriteLine("LoggerDemo  - press 5");
-            Console.WriteLine("Exit        - press 0");
+            Console.WriteLine("Hometask #1 (Structures and Enums) - press 1");
+            Console.WriteLine("Hometask #2 (Exceptions)           - press 2");
+            Console.WriteLine("Hometask #3 (Streams)              - press 3");
+            Console.WriteLine("Hometask #4 (Serialization)        - press 4");
+            Console.WriteLine("Hometask #5 (Reflection)           - press 5");
+            Console.WriteLine("LoggerDemo                         - press 6");
+            Console.WriteLine("Exit                               - press 0");
         }
         static void DelayAndClear()
         {

@@ -6,7 +6,7 @@ namespace Logger.Interfaces
 {
     interface ILogger
     {
-        string ReadMessage();
-        void WriteMessage(Exception e);
+        string ReadLog();
+        void Log(Exception e);
     }
 }

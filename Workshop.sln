@@ -13,7 +13,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Streams", "Streams\Streams.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Logger", "Logger\Logger.csproj", "{A34413CB-A828-4E1B-9AC8-0D5528CA397E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Serialization", "Serialization\Serialization.csproj", "{23D0C5C5-FBD5-4811-B0AD-2B605DAA7AA3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Serialization", "Serialization\Serialization.csproj", "{23D0C5C5-FBD5-4811-B0AD-2B605DAA7AA3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Reflection", "Reflection\Reflection.csproj", "{57E7B0FE-DA58-4331-8BA4-26B1005E227D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{23D0C5C5-FBD5-4811-B0AD-2B605DAA7AA3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{23D0C5C5-FBD5-4811-B0AD-2B605DAA7AA3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{23D0C5C5-FBD5-4811-B0AD-2B605DAA7AA3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{57E7B0FE-DA58-4331-8BA4-26B1005E227D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{57E7B0FE-DA58-4331-8BA4-26B1005E227D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{57E7B0FE-DA58-4331-8BA4-26B1005E227D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{57E7B0FE-DA58-4331-8BA4-26B1005E227D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

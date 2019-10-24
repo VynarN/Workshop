@@ -3,15 +3,64 @@ using System.IO;
 using System.Text;
 namespace Logger
 {
-    public class MyLogger: Interfaces.ILogger
+    public class MyLogger : Interfaces.ILogger
     {
+        private delegate void LoggerWriter(Exception e);
+        private delegate string LoggerReader();
         private Configuration Configuration;
+        private LoggerWriter Writer;
+        private LoggerReader Reader;
 
         public MyLogger(Configuration configuration)
         {
-            Configuration = configuration;
+            if (configuration != null)
+            {
+                Configuration = configuration;
+                TurnOn();
+            }
+            else
+            {
+                throw new ArgumentNullException();
+            }
         }
-        public string ReadMessage()
+        public void TurnOn()
+        {
+            Writer = WriteMessage;
+            Reader = ReadMessage;
+        }
+        public void TurnOff()
+        {
+            Writer = null;
+            Reader = null;
+        }
+        public string ReadLog()
+        {
+            if(Reader != null)
+            {
+                return Reader();
+            }
+            else
+            {
+                NullReferenceException e = new NullReferenceException("Logger has been turned off! " +
+                       "To use it, turn it on by invoking TunrOn() funcntion!");
+                WriteMessage(e);
+                return String.Empty;
+            }
+        }
+        public void Log(Exception exception)
+        {
+            if (Writer != null)
+            {
+                Writer(exception);
+            }
+            else
+            {
+                NullReferenceException e = new NullReferenceException("Logger has been turned off! " +
+                    "To use it, turn it on by invoking TunrOn() funcntion!");
+                WriteMessage(e);
+            }
+        }
+        private string ReadMessage()
         {
             StringBuilder message = new StringBuilder(String.Empty);
             using(StreamReader reader = new StreamReader(Configuration.Location))
@@ -23,7 +72,7 @@ namespace Logger
             }
             return message.ToString();
         }
-        public void WriteMessage(Exception e)
+        private void WriteMessage(Exception e)
         {
             using (StreamWriter writer = new StreamWriter(Configuration.Location, true))
             {

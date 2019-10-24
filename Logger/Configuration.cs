@@ -19,7 +19,7 @@ namespace Logger
             else
             {
                 MyLogger logger = new MyLogger(this);
-                logger.WriteMessage(new ArgumentException("Configuration ERROR!" +
+                logger.Log(new ArgumentException("Configuration ERROR!" +
                     "\nSpecified location is incorrect!\nDefault location will be used!"));
             }
            
