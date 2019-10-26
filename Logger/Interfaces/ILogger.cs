@@ -1,9 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Logger.Interfaces
+﻿namespace Logger.Interfaces
 {
+    using System;
+    
     interface ILogger
     {
         string ReadLog();

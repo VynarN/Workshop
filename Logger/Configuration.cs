@@ -1,9 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.IO;
-namespace Logger
+﻿namespace Logger
 {
+    using System;
+    using System.IO;
+
     public class Configuration
     {
         public LevelOfDetalization Level { get; private set; }

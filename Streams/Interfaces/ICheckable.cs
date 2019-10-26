@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Streams.Interfaces
+﻿namespace Streams.Interfaces
 {
-    interface ICheckable<T>
+    public interface ICheckable<T>
     {
         bool Check(T param);
     }

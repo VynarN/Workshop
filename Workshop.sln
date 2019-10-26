@@ -15,7 +15,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Logger", "Logger\Logger.csp
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Serialization", "Serialization\Serialization.csproj", "{23D0C5C5-FBD5-4811-B0AD-2B605DAA7AA3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Reflection", "Reflection\Reflection.csproj", "{57E7B0FE-DA58-4331-8BA4-26B1005E227D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Reflection", "Reflection\Reflection.csproj", "{57E7B0FE-DA58-4331-8BA4-26B1005E227D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StyleCop", "StyleCop\StyleCop.csproj", "{74F04889-B8D2-4A42-8141-23DF7350E957}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +53,10 @@ Global
 		{57E7B0FE-DA58-4331-8BA4-26B1005E227D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{57E7B0FE-DA58-4331-8BA4-26B1005E227D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{57E7B0FE-DA58-4331-8BA4-26B1005E227D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{74F04889-B8D2-4A42-8141-23DF7350E957}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{74F04889-B8D2-4A42-8141-23DF7350E957}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{74F04889-B8D2-4A42-8141-23DF7350E957}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{74F04889-B8D2-4A42-8141-23DF7350E957}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

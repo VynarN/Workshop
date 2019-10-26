@@ -1,16 +1,15 @@
-﻿using System;
-using System.IO;
-using System.Text;
-namespace Logger
+﻿namespace Logger
 {
+    using System;
+    using System.IO;
+    using System.Text;
+
     public class MyLogger : Interfaces.ILogger
     {
-        private delegate void LoggerWriter(Exception e);
-        private delegate string LoggerReader();
         private Configuration Configuration;
         private LoggerWriter Writer;
         private LoggerReader Reader;
-
+       
         public MyLogger(Configuration configuration)
         {
             if (configuration != null)
@@ -23,16 +22,23 @@ namespace Logger
                 throw new ArgumentNullException();
             }
         }
+
+        private delegate void LoggerWriter(Exception e);
+
+        private delegate string LoggerReader();
+
         public void TurnOn()
         {
             Writer = WriteMessage;
             Reader = ReadMessage;
         }
+
         public void TurnOff()
         {
             Writer = null;
             Reader = null;
         }
+
         public string ReadLog()
         {
             if(Reader != null)
@@ -47,6 +53,7 @@ namespace Logger
                 return String.Empty;
             }
         }
+
         public void Log(Exception exception)
         {
             if (Writer != null)
@@ -60,6 +67,7 @@ namespace Logger
                 WriteMessage(e);
             }
         }
+
         private string ReadMessage()
         {
             StringBuilder message = new StringBuilder(String.Empty);
@@ -72,6 +80,7 @@ namespace Logger
             }
             return message.ToString();
         }
+
         private void WriteMessage(Exception e)
         {
             using (StreamWriter writer = new StreamWriter(Configuration.Location, true))
