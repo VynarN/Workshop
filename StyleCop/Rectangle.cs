@@ -3,14 +3,19 @@
     using System;
     using Logger;
 
+    // This class defines a functionality of a rectangle on Cartesian coordinate system.
     public class Rectangle: Streams.Interfaces.ICheckable<Rectangle>
     {
         public double Length { get; private set; }
-        public double Width { get; private set; }
-        public (double, double) TopLeft { get; private set; }
-        public (double, double) BottomRight { get; private set; }
-        private MyLogger logger;
 
+        public double Width { get; private set; }
+
+        public (double, double) TopLeft { get; private set; }
+
+        public (double, double) BottomRight { get; private set; }
+
+        private MyLogger logger;
+        
         public Rectangle((double, double) topLeft, (double, double) bottomRight)
         {
             TopLeft = topLeft;
@@ -54,10 +59,9 @@
                     BottomRight = (BottomRight.Item1 + length, BottomRight.Item2);
                     break;
                 default:
-                    TopLeft = (TopLeft.Item1 - length / 2.0, TopLeft.Item2);
-                    BottomRight = (BottomRight.Item1 + length / 2.0, BottomRight.Item2);
+                    TopLeft = (TopLeft.Item1 - (length / 2.0), TopLeft.Item2);
+                    BottomRight = (BottomRight.Item1 + (length / 2.0), BottomRight.Item2);
                     break;
-                
             }
             Length = Length + length;
         }
@@ -73,10 +77,9 @@
                     BottomRight = (BottomRight.Item1, BottomRight.Item2 - width);
                     break;
                 default:
-                    TopLeft = (TopLeft.Item1, TopLeft.Item2 + width / 2.0);
-                    BottomRight = (BottomRight.Item1, BottomRight.Item2 - width / 2.0);
+                    TopLeft = (TopLeft.Item1, TopLeft.Item2 + (width / 2.0));
+                    BottomRight = (BottomRight.Item1, BottomRight.Item2 - (width / 2.0));
                     break;
-
             }
             Width = Width + width;
         }
@@ -109,23 +112,21 @@
                 var yRangeOfLowermostRectangle = (upperBound: 0.0, lowerBound: 0.0);
 
                 // Find X-ranges of the leftmost and rightmost rectangle.
-                FindRangesOfRectanglesOnCertainAxis(firstRectangle, secondRectangle, 'x',
-                                                    ref xRangeOfLeftmostRectangle, ref xRangeOfRightmostRectangle);
+                FindRangesOfRectanglesOnCertainAxis(firstRectangle, secondRectangle, 'x', ref xRangeOfLeftmostRectangle, ref xRangeOfRightmostRectangle);
 
                 // If right bound of the leftmost rectangle is not greater than the left bound
                 // of the rightmost one, there is no cross.
                 if (xRangeOfLeftmostRectangle.rightBound > xRangeOfRightmostRectangle.leftBound)
                 {
                     // Find Y-ranges of the uppermost and lowermost rectangle
-                    FindRangesOfRectanglesOnCertainAxis(firstRectangle, secondRectangle, 'y',
-                                                    ref yRangeOfUppermostRectangle, ref yRangeOfLowermostRectangle);
+                    FindRangesOfRectanglesOnCertainAxis(firstRectangle, secondRectangle, 'y', ref yRangeOfUppermostRectangle, ref yRangeOfLowermostRectangle);
 
                     // If lower bound of the upper rectangle is not greater than the upper bound
                     // of the lower one, there is no cross on Y-axis even if it is on X-axis.
-                    if(yRangeOfUppermostRectangle.lowerBound > yRangeOfLowermostRectangle.upperBound)
+                    if (yRangeOfUppermostRectangle.lowerBound > yRangeOfLowermostRectangle.upperBound)
                     {
                         return new Rectangle((xRangeOfRightmostRectangle.leftBound, yRangeOfLowermostRectangle.upperBound),
-                                             (xRangeOfLeftmostRectangle.rightBound, yRangeOfUppermostRectangle.lowerBound));
+                                            (xRangeOfLeftmostRectangle.rightBound, yRangeOfUppermostRectangle.lowerBound));
                     }
                     else
                     {
@@ -150,10 +151,9 @@
             return obj == null ? false : true;
         }
         
-        private void FindRangesOfRectanglesOnCertainAxis(Rectangle firstRectangle, Rectangle secondRectangle, char axis,
-                                                         ref (double, double) firstRange, ref(double, double) secondRange)
+        private void FindRangesOfRectanglesOnCertainAxis(Rectangle firstRectangle, Rectangle secondRectangle, char axis, ref (double, double) firstRange, ref(double, double) secondRange)
         {
-            if(Char.ToLower(axis) == 'x')
+            if (char.ToLower(axis) == 'x')
             {
                 if (firstRectangle.TopLeft.Item1 < secondRectangle.TopLeft.Item1)
                 {
@@ -166,7 +166,7 @@
                     secondRange = (firstRectangle.TopLeft.Item1, firstRectangle.BottomRight.Item1);
                 }
             }
-            else if(Char.ToLower(axis) == 'y')
+            else if (char.ToLower(axis) == 'y')
             {
                 if (firstRectangle.TopLeft.Item2 > secondRectangle.TopLeft.Item2)
                 {
