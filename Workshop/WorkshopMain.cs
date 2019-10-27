@@ -36,6 +36,9 @@ namespace Workshop
                             Hometask5();
                             break;
                         case 6:
+                            Hometask6();
+                            break;
+                        case 7:
                             LoggerDemo();
                             break;
                         case 0:
@@ -61,7 +64,8 @@ namespace Workshop
             Console.WriteLine("Hometask #3 (Streams)              - press 3");
             Console.WriteLine("Hometask #4 (Serialization)        - press 4");
             Console.WriteLine("Hometask #5 (Reflection)           - press 5");
-            Console.WriteLine("LoggerDemo                         - press 6");
+            Console.WriteLine("Hometask #6 (Style Cop)            - press 6");
+            Console.WriteLine("LoggerDemo                         - press 7");
             Console.WriteLine("Exit                               - press 0");
         }
         static void DelayAndClear()
