@@ -1,13 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-
-namespace Workshop
+﻿namespace Workshop
 {
+    using System;
+    using Logger;
+    using System.Configuration;
+
     public partial class WorkshopMain
     {
+        static MyLogger Logger;
+
         public static void Main(string[] args)
         {
+            var appSettings = ConfigurationManager.AppSettings;
+            var LoggerLocation = appSettings.Get("LoggerLocation");
+            var configuration = new Logger.Configuration(LevelOfDetalization.INFO, LoggerLocation);
+            Logger = new MyLogger(configuration);
             bool stop = false;
             while (!stop)
             {
@@ -39,7 +45,13 @@ namespace Workshop
                             Hometask6();
                             break;
                         case 7:
+                            Hometask6_2();
+                            break;
+                        case 8:
                             LoggerDemo();
+                            break;
+                        case 9:
+                            DoSomeCalculation();
                             break;
                         case 0:
                             stop = true;
@@ -64,8 +76,10 @@ namespace Workshop
             Console.WriteLine("Hometask #3 (Streams)              - press 3");
             Console.WriteLine("Hometask #4 (Serialization)        - press 4");
             Console.WriteLine("Hometask #5 (Reflection)           - press 5");
-            Console.WriteLine("Hometask #6 (Style Cop)            - press 6");
-            Console.WriteLine("LoggerDemo                         - press 7");
+            Console.WriteLine("Hometask #6.1                      - press 6");
+            Console.WriteLine("Hometask #6.2                      - press 7");
+            Console.WriteLine("LoggerDemo                         - press 8");
+            Console.WriteLine("Do some Calculation                - press 9");
             Console.WriteLine("Exit                               - press 0");
         }
         static void DelayAndClear()

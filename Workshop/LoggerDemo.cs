@@ -9,8 +9,6 @@ namespace Workshop
     {
         static void LoggerDemo()
         {
-            Configuration config = new Configuration(LevelOfDetalization.INFO, string.Empty);
-            MyLogger mylogger = new MyLogger(config);
             try
             {
                 int a = 1;
@@ -18,7 +16,7 @@ namespace Workshop
                 int c = a / b;
             }catch(ArithmeticException e)
             {
-                mylogger.Log(e);
+                Logger.Log(e);
             }
             //mylogger.TurnOff();
             try
@@ -28,7 +26,7 @@ namespace Workshop
             }
             catch(Exception e)
             {
-                mylogger.Log(e);
+                Logger.Log(e);
             }
             //mylogger.TurnOn();
             try
@@ -38,9 +36,9 @@ namespace Workshop
             }
             catch (Exception e)
             {
-                mylogger.Log(e);
+                Logger.Log(e);
             }
-            string errors = mylogger.ReadLog();
+            string errors = Logger.ReadLog();
             Console.WriteLine(errors);
         }
             

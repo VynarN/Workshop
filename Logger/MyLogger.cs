@@ -7,7 +7,9 @@
     public class MyLogger : Interfaces.ILogger
     {
         private Configuration Configuration;
+
         private LoggerWriter Writer;
+
         private LoggerReader Reader;
        
         public MyLogger(Configuration configuration)
@@ -94,7 +96,7 @@
                         writer.WriteLine($"{DateTime.Now} {e.Source}: {e.StackTrace}");
                         break;
                     default:
-                        writer.WriteLine($"{DateTime.Now} {e.Source}: {e.Message}");
+                        writer.WriteLine($"{DateTime.Now} {e.Source}: {e}");
                         break;
                 }
             }

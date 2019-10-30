@@ -17,7 +17,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Serialization", "Serializat
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Reflection", "Reflection\Reflection.csproj", "{57E7B0FE-DA58-4331-8BA4-26B1005E227D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StyleCop", "StyleCop\StyleCop.csproj", "{74F04889-B8D2-4A42-8141-23DF7350E957}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StyleCop", "StyleCop\StyleCop.csproj", "{74F04889-B8D2-4A42-8141-23DF7350E957}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Comparators", "DirectoriesComparator\Comparators.csproj", "{386DD4D4-D050-4E91-85F7-31AE9319FD8D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Calculator", "Calculator\Calculator.csproj", "{D198EE32-7E57-42A2-8358-70E57D78CDA3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -57,6 +61,14 @@ Global
 		{74F04889-B8D2-4A42-8141-23DF7350E957}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{74F04889-B8D2-4A42-8141-23DF7350E957}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{74F04889-B8D2-4A42-8141-23DF7350E957}.Release|Any CPU.Build.0 = Release|Any CPU
+		{386DD4D4-D050-4E91-85F7-31AE9319FD8D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{386DD4D4-D050-4E91-85F7-31AE9319FD8D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{386DD4D4-D050-4E91-85F7-31AE9319FD8D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{386DD4D4-D050-4E91-85F7-31AE9319FD8D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D198EE32-7E57-42A2-8358-70E57D78CDA3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D198EE32-7E57-42A2-8358-70E57D78CDA3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D198EE32-7E57-42A2-8358-70E57D78CDA3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D198EE32-7E57-42A2-8358-70E57D78CDA3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
