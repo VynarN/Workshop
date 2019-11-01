@@ -53,6 +53,9 @@
                         case 9:
                             DoSomeCalculation();
                             break;
+                        case 10:
+                            ThreadsPractise();
+                            break;
                         case 0:
                             stop = true;
                             break;

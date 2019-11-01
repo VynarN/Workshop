@@ -23,6 +23,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Comparators", "DirectoriesC
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Calculator", "Calculator\Calculator.csproj", "{D198EE32-7E57-42A2-8358-70E57D78CDA3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Threads", "Threads\Threads.csproj", "{CD551E85-4CAF-4BA7-B3A0-0EED32E20152}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -69,6 +71,10 @@ Global
 		{D198EE32-7E57-42A2-8358-70E57D78CDA3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D198EE32-7E57-42A2-8358-70E57D78CDA3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D198EE32-7E57-42A2-8358-70E57D78CDA3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CD551E85-4CAF-4BA7-B3A0-0EED32E20152}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CD551E85-4CAF-4BA7-B3A0-0EED32E20152}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CD551E85-4CAF-4BA7-B3A0-0EED32E20152}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CD551E85-4CAF-4BA7-B3A0-0EED32E20152}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
