@@ -83,6 +83,7 @@
             Console.WriteLine("Hometask #6.2                      - press 7");
             Console.WriteLine("LoggerDemo                         - press 8");
             Console.WriteLine("Do some Calculation                - press 9");
+            Console.WriteLine("Practising threads using TPL       - press 10");
             Console.WriteLine("Exit                               - press 0");
         }
         static void DelayAndClear()

@@ -10,25 +10,14 @@
     {
         static void ThreadsPractise()
         {
-            const int TASKS = 4;
-            MyMatrix matrix = new MyMatrix(1000);
-            Task<int>[] tasks = new Task<int>[TASKS];
-            var size = MyMatrix.Size;
-            var seqResult = 0;
-            var seqMatrix = MyMatrix.Matrix;
-            for(int i = 0; i < size; i++)
-            {
-                for(int j = 0; j < size; j++)
-                {
-                    seqResult += seqMatrix[i, j];
-                }
-            }
-            Console.WriteLine("Sequentional computition: " + seqResult);have
-            tasks[0] = Task<int>.Factory.StartNew(() => MyMatrix.Sum(0));
-            tasks[1] = Task<int>.Factory.StartNew(() => MyMatrix.Sum(tasks[0].Result));
-            tasks[2] = Task<int>.Factory.StartNew(() => MyMatrix.Sum(tasks[1].Result));
-            tasks[3] = Task<int>.Factory.StartNew(() => MyMatrix.Sum(tasks[2].Result));
-            Console.WriteLine("Parallel: " + tasks[3].Result);
+            MyMatrix matrix = new MyMatrix((999, 400));
+            Console.WriteLine($"Sequential calculation: {matrix.SequentialCalculation(), -20}");
+            Console.WriteLine($"Parallel calculation: {matrix.ParallelCalculation(), -20}");
+
+            MyMatrix matrix2 = new MyMatrix((1000, 1000));
+            Console.WriteLine($"Sequential calculation: {matrix2.SequentialCalculation(), -20}");
+            Console.WriteLine($"Parallel calculation: {matrix2.ParallelCalculation(), -20}");
+
             DelayAndClear();
         }
 
