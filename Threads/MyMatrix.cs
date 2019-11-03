@@ -21,6 +21,7 @@
         {
             Size = size;
             Matrix = new int[Size.Item1, Size.Item2];
+
             // Here we decide whether by row or by column the matrix 
             // will be sectioned. If rows < columns then by columns,
             // in other cases by rows.
@@ -41,7 +42,7 @@
 
         public int ParallelCalculation()
         {
-            Task<int>[] tasks = new Task<int>[PROCESSES];
+            var tasks = new Task<int>[PROCESSES];
             tasks[0] = Task<int>.Factory.StartNew(() => Sum(0));
             tasks[1] = Task<int>.Factory.StartNew(() => Sum(SectionSize));
             tasks[2] = Task<int>.Factory.StartNew(() => Sum(SectionSize * 2));

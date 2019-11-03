@@ -119,9 +119,7 @@
             }
             else
             {
-                ArgumentException exception = new ArgumentException($"{axis} does not exist!");
-                Logger.Log(exception);
-                throw exception;
+                throw new ArgumentException($"{axis} does not exist!");
             }
         }
     }

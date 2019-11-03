@@ -1,31 +1,30 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.IO;
-using Streams.Interfaces;
-using IO = System.IO;
-namespace Streams
+﻿namespace Streams
 {
+    using System;
+    using System.IO;
+    using Streams.Interfaces;
+    using Logger.Interfaces;
+    using IO = System.IO;
+
     public class DirectoryVisualizer : IVisualizable, ICheckable<string>
     {
-        public Logger Logger { get; private set; }
         public string Directory { get; private set; }
+
         private IInteractable UserInterface;
 
-        public DirectoryVisualizer(string directory, IInteractable userInterface)
+        private ILogger Logger;
+
+        public DirectoryVisualizer(string directory, IInteractable userInterface, ILogger logger)
         {
             UserInterface = userInterface;
-            Logger = new Logger();
-
+            Logger = logger;
             if (Check(directory))
             {
                 Directory = directory;
             }
             else
             {
-               string message = "Specified directory does not exist!";
-               Logger.Log($"{this.GetType()}: {message}");
-               throw new ArgumentException(message);
+               Logger.Log(new ArgumentException("Specified directory does not exist!"));
             }
         }
 
@@ -34,45 +33,46 @@ namespace Streams
             try
             {
                 GetListOfFilesAndDirectories(Directory, 0);
-            } catch (UnauthorizedAccessException e)
+            }
+            catch (UnauthorizedAccessException e)
             {
-                Logger.Log($"{this.GetType()}: {e.Message}");
-                UserInterface.Write(e.Message);
+                Logger.Log(e);
             }
         }
 
         private void GetListOfFilesAndDirectories(string directory, int padding)
         {
-            DirectoryInfo currentDirrectory = new DirectoryInfo(directory);
-            DirectoryInfo[] directories = currentDirrectory.GetDirectories();
-            FileInfo[] files = currentDirrectory.GetFiles();
+            var currentDirrectory = new DirectoryInfo(directory);
+            var directories = currentDirrectory.GetDirectories();
+            var files = currentDirrectory.GetFiles();
             foreach (var dir in directories)
             {
                 if (dir.Name.StartsWith("$"))
                     continue;
 
-                UserInterface.Write(MakePadding(padding) + dir.Name + ":");
+                UserInterface.WriteLine(MakePadding(padding) + dir.Name + ":");
                 GetListOfFilesAndDirectories(dir.ToString(), padding + 2);
             }
             foreach (var file in files)
             {
-                UserInterface.Write(MakePadding(padding) + file.Name);
+                UserInterface.WriteLine(MakePadding(padding) + file.Name);
             }
         }
+
         private static string MakePadding(int padding)
         {
-            string str = String.Empty;
+            var str = String.Empty;
             for (int i = 0; i < padding; i++)
             {
                 str += " ";
             }
             return str;
         }
+
         public bool Check(string path)
         {
             return (!String.IsNullOrEmpty(path) &&
                     IO.Directory.Exists(path.Substring(0, path.LastIndexOf("\\"))));
         }
-        
     }
 }

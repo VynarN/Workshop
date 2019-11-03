@@ -2,7 +2,7 @@
 {
     using System;
     
-    interface ILogger
+    public interface ILogger
     {
         string ReadLog();
         void Log(Exception e);

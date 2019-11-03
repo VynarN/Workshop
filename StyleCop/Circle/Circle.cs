@@ -9,13 +9,10 @@
 
         public (V, V) Center { get; protected set; }
 
-        protected MyLogger Logger;
-
         public Circle((V, V) centerCoordinates, V radius)
         { 
             Center = centerCoordinates;
             Radius = radius;
-            Logger = new MyLogger(new Configuration(LevelOfDetalization.INFO, string.Empty));
         }
 
         public abstract void Move(V value, Direction direction);

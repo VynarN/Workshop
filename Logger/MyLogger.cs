@@ -49,10 +49,10 @@
             }
             else
             {
-                NullReferenceException e = new NullReferenceException("Logger has been turned off! " +
-                       "To use it, turn it on by invoking TunrOn() funcntion!");
-                WriteMessage(e);
-                return String.Empty;
+                NullReferenceException loggerException = new NullReferenceException("Logger has been turned off! " +
+                     "To use it, turn it on by invoking TunrOn() funcntion!");
+                WriteMessage(loggerException);
+                throw loggerException;
             }
         }
 
@@ -64,9 +64,10 @@
             }
             else
             {
-                NullReferenceException e = new NullReferenceException("Logger has been turned off! " +
+                NullReferenceException loggerException = new NullReferenceException("Logger has been turned off! " +
                     "To use it, turn it on by invoking TunrOn() funcntion!");
-                WriteMessage(e);
+                WriteMessage(loggerException);
+                throw loggerException;
             }
         }
 

@@ -1,17 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.IO;
-using Streams.Interfaces;
-namespace Streams
+﻿namespace Streams
 {
-    public class Logger: ICheckable<string>
+    using System;
+    using System.IO;
+    using Streams.Interfaces;
+
+    public class MyLogger: ICheckable<string>
     {
         public string DefaultFile { get; private set; } = Directory.GetCurrentDirectory() + "\\log.txt";
-        public StreamWriter Writer { get; private set; }
-        public Logger() { }
 
-        public Logger(string path)
+        public StreamWriter Writer { get; private set; }
+
+        public MyLogger() { }
+
+        public MyLogger(string path)
         {
             if (Check(path))
             {

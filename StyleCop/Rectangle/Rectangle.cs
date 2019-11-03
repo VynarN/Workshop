@@ -14,15 +14,12 @@
 
         public (double, double) BottomRight { get; private set; }
 
-        private MyLogger Logger;
-
         public Rectangle((double, double) topLeft, (double, double) bottomRight)
         {
             TopLeft = topLeft;
             BottomRight = bottomRight;
             Length = Math.Abs(bottomRight.Item1 - topLeft.Item1);
             Width = Math.Abs(topLeft.Item2 - bottomRight.Item2);
-            Logger = new MyLogger(new Configuration(LevelOfDetalization.INFO, String.Empty));
         }
 
         public void Move(double value, Direction direction)

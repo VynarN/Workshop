@@ -17,9 +17,7 @@
             }
             else
             {
-                ArgumentException exception = new ArgumentException("Argument can not be null! Each rectangle should be initialized!");
-                Logger.Log(exception);
-                throw exception;
+                throw new ArgumentException("Argument can not be null! Each rectangle should be initialized!");
             }
         }
     }

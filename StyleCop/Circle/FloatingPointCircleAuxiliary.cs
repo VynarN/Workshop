@@ -56,45 +56,41 @@
             }
             else
             {
-                ArgumentException exception = new ArgumentException("Argument can not be null! Each circle should be initialized!");
-                Logger.Log(exception);
-                throw exception;
+                throw new ArgumentException("Argument can not be null! Each circle should be initialized!");
             }
         }
         
-        private void FindRangeOfCircleOnCertainAxis (FloatingPointCircle first, FloatingPointCircle second, char axis, ref (double, double) leftmostFigure, ref (double, double) rightmostFigure)
+        private void FindRangeOfCircleOnCertainAxis (FloatingPointCircle first, FloatingPointCircle second, char axis, ref (double, double) rangeOfTheLeftmostFigure, ref (double, double) rangeOfTheRightmostFigure)
         {
             if (char.ToLower(axis) == 'x')
             {
                 if (first.Center.Item1 > second.Center.Item1)
                 {
-                    leftmostFigure= (first.Center.Item1 - first.Radius, first.Center.Item1 + first.Radius);
-                    rightmostFigure = (second.Center.Item1 - second.Radius, second.Center.Item1 + second.Radius);
+                    rangeOfTheLeftmostFigure = (first.Center.Item1 - first.Radius, first.Center.Item1 + first.Radius);
+                    rangeOfTheRightmostFigure = (second.Center.Item1 - second.Radius, second.Center.Item1 + second.Radius);
                 }
                 else
                 {
-                    leftmostFigure = (second.Center.Item1 - second.Radius, second.Center.Item1 + second.Radius);
-                    rightmostFigure = (first.Center.Item1 - first.Radius, first.Center.Item1 + first.Radius);
+                    rangeOfTheLeftmostFigure = (second.Center.Item1 - second.Radius, second.Center.Item1 + second.Radius);
+                    rangeOfTheRightmostFigure = (first.Center.Item1 - first.Radius, first.Center.Item1 + first.Radius);
                 }
             }
             else if (char.ToLower(axis) == 'y')
             {
                 if (first.Center.Item2 > second.Center.Item2)
                 {
-                    leftmostFigure = (first.Center.Item2 - first.Radius, first.Center.Item2 + first.Radius);
-                    rightmostFigure = (second.Center.Item2 - second.Radius, second.Center.Item2 + second.Radius);
+                    rangeOfTheLeftmostFigure = (first.Center.Item2 - first.Radius, first.Center.Item2 + first.Radius);
+                    rangeOfTheRightmostFigure = (second.Center.Item2 - second.Radius, second.Center.Item2 + second.Radius);
                 }
                 else
                 {
-                    leftmostFigure = (second.Center.Item2 - second.Radius, second.Center.Item2 + second.Radius);
-                    rightmostFigure = (first.Center.Item2 - second.Radius, first.Center.Item2 + second.Radius);
+                    rangeOfTheLeftmostFigure = (second.Center.Item2 - second.Radius, second.Center.Item2 + second.Radius);
+                    rangeOfTheRightmostFigure = (first.Center.Item2 - second.Radius, first.Center.Item2 + second.Radius);
                 }
             }
             else
             {
-                ArgumentException exception = new ArgumentException($"{axis} does not exist!");
-                Logger.Log(exception);
-                throw exception;
+                throw new ArgumentException("Specified axis does not exist!");
             }
         }
     }

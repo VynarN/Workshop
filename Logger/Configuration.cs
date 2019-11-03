@@ -6,7 +6,8 @@
     public class Configuration
     {
         public LevelOfDetalization Level { get; private set; }
-        public string Location { get; private set; } = Directory.GetCurrentDirectory() + "\\Errors.txt";
+
+        public string Location { get; private set; }
 
         public Configuration(LevelOfDetalization level, string location)
         {
@@ -17,16 +18,16 @@
             }
             else
             {
+                Location = Directory.GetCurrentDirectory() + "\\Errors.txt";
                 MyLogger logger = new MyLogger(this);
-                logger.Log(new ArgumentException("Configuration ERROR!" +
-                    "\nSpecified location is incorrect!\nDefault location will be used!"));
+                logger.Log(new ArgumentException($"Specified location is incorrect! Default location will be used: {Location}"));
             }
            
         }
 
         private bool IsEligible(string path)
         {
-            return (!String.IsNullOrEmpty(path) &&
+            return (!string.IsNullOrEmpty(path) &&
                     Directory.Exists(path.Substring(0, path.LastIndexOf("\\"))));
         }
     }
