@@ -23,6 +23,7 @@
     <ProjectReference Include="..\StructuresAndEnums\StructuresAndEnums.csproj" />
     <ProjectReference Include="..\StyleCop\StyleCop.csproj" />
     <ProjectReference Include="..\Threads\Threads.csproj" />
+    <ProjectReference Include="..\VynarN.Workshop.DependecyInjection\VynarN.Workshop.DependecyInjection.csproj" />
   </ItemGroup>
 
 </Project>
