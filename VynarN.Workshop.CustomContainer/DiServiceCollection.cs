@@ -1,7 +1,8 @@
-﻿namespace VynarN.Workshop.DependecyInjection
-{
-    using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using System;
 
+namespace VynarN.Workshop.CustomContainer
+{
     public class DiServiceCollection
     {
         private List<ServiceDescriptor> _serviceDescriptors = new List<ServiceDescriptor>();
@@ -9,7 +10,7 @@
         public void RegisterSingleton<TService>()
         {
             _serviceDescriptors.Add(new ServiceDescriptor(typeof(TService), ServiceLifetime.Singleton));
-        } 
+        }
 
         public void RegisterSingleton<TService>(TService implementation)
         {
