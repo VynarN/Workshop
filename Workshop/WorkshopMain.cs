@@ -59,6 +59,9 @@
                         case 11:
                             DependencyInjectionDemo();
                             break;
+                        case 12:
+                            OneDriveTask();
+                            break;
                         case 0:
                             stop = true;
                             break;
@@ -88,6 +91,7 @@
             Console.WriteLine("Do some Calculation                - press 9");
             Console.WriteLine("Practising threads using TPL       - press 10");
             Console.WriteLine("IoC container                      - press 11");
+            Console.WriteLine("OneDrive homework                  - press 12");
             Console.WriteLine("Exit                               - press 0");
         }
         static void DelayAndClear()

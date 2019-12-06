@@ -6,7 +6,7 @@
 
     public class MyLogger : Interfaces.ILogger
     {
-        private Configuration Configuration;
+        private readonly Configuration Configuration;
 
         private LoggerWriter Writer;
 

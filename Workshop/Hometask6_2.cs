@@ -18,8 +18,8 @@
                 var file = appSettings.Get("File");
                 var fileToSaveResult = appSettings.Get("Result");
                 var ui = appSettings.Get("UI");
-                IInteractable userInterface = GetUserInteface(ui, fileToSaveResult);
-                ExcelListsComparator listsComparator = new ExcelListsComparator(file, ('A', 'B'), userInterface);
+                var userInterface = GetUserInteface(ui, fileToSaveResult);
+                var listsComparator = new ExcelListsComparator(file, ('A', 'B'), userInterface);
                 listsComparator.Compare();
             }
             else

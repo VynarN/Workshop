@@ -28,12 +28,14 @@ namespace VynarN.Workshop.CustomContainer
             }
 
             var actualType = descriptor.ImplementationType ?? descriptor.ServiceType;
+
             if (actualType.IsAbstract || actualType.IsInterface)
             {
                 throw new Exception("Cannot instatiate abstract classes or interfaces");
             }
 
             var constructorInfo = actualType.GetConstructors().First();
+            
             var parameters = constructorInfo.GetParameters().Select(x => GetService(x.ParameterType)).ToArray();
 
             var implementation = Activator.CreateInstance(actualType, parameters);

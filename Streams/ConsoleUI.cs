@@ -1,9 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Streams
+﻿namespace Streams
 {
+    using System;
+
     public class ConsoleUI : Streams.Interfaces.IInteractable
     {
         public string Read()

@@ -27,10 +27,11 @@ namespace VynarN.Workshop.Tests.NUnitHometask1
 
         public bool AddStudent(Student student)
         {
-            if(student != null)
+            if (student != null)
             {
                 var ids = Students.Select(x => x.Id);
-                if(!ids.Contains(student.Id))
+
+                if (!ids.Contains(student.Id))
                 {
                     return Students.Add(student);
                 }

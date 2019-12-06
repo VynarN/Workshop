@@ -10,9 +10,9 @@
     {
         public string Directory { get; private set; }
 
-        private IInteractable UserInterface;
+        private readonly IInteractable UserInterface;
 
-        private ILogger Logger;
+        private readonly ILogger Logger;
 
         public DirectoryVisualizer(string directory, IInteractable userInterface, ILogger logger)
         {
@@ -61,7 +61,7 @@
 
         private static string MakePadding(int padding)
         {
-            var str = String.Empty;
+            var str = string.Empty;
             for (int i = 0; i < padding; i++)
             {
                 str += " ";
@@ -71,7 +71,7 @@
 
         public bool Check(string path)
         {
-            return (!String.IsNullOrEmpty(path) &&
+            return (!string.IsNullOrEmpty(path) &&
                     IO.Directory.Exists(path.Substring(0, path.LastIndexOf("\\"))));
         }
     }

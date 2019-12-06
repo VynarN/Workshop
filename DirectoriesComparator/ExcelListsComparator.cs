@@ -17,14 +17,14 @@
 
         private FileXlsxUI Reader;
 
-        public ExcelListsComparator(string File, (char, char) ListsToCompare, IInteractable userInterface)
+        public ExcelListsComparator(string fileToRead, (char, char) ListsToCompare, IInteractable userInterface)
         {
-            if (!string.IsNullOrEmpty(File) && userInterface != null)
+            if (!string.IsNullOrEmpty(fileToRead) && userInterface != null)
             {
-                Reader = new FileXlsxUI(File, "ExcelListsComparator", 10, 'B');
+                Reader = new FileXlsxUI(fileToRead, "ResultOfComparison", 10, 'B');
                 UserInterface = userInterface;
                 firstColumn = ListsToCompare.Item1;
-                firstColumn = ListsToCompare.Item2;
+                secondColumn = ListsToCompare.Item2;
             }
             else
             {

@@ -44,7 +44,7 @@
             }
             else
             {
-                throw new ArgumentException("Name of a file can not be null or empty and has the same name as another file!");
+                throw new ArgumentException("Name of a file can not be null or empty and have the same name as another file!");
             }
         }
 

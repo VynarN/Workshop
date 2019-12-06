@@ -1,7 +1,6 @@
 ﻿namespace StyleCop
 {
     using System;
-    using Logger;
 
     // This class defines a functionality of a rectangle on the Cartesian coordinate system.
     public partial class Rectangle : IMovable<double>

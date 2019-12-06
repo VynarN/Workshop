@@ -11,9 +11,9 @@
 
         public string FileLocation { get; private set; } 
 
-        private IInteractable UI;
+        private readonly IInteractable UI;
 
-        private ILogger Logger;
+        private readonly ILogger Logger;
 
         public FileSearcher(string filename, ILogger logger)
         {

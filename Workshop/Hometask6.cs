@@ -13,16 +13,17 @@
         {
             var watch = System.Diagnostics.Stopwatch.StartNew();
             var settings = ConfigurationManager.GetSection("Hometask6/DirectoriesComparator") as NameValueCollection;
+
             if (settings != null)
             {
                 var firstDir = settings.Get("firstDir");
                 var secondDir = settings.Get("secondDir");
                 var result = settings.Get("Result");
                 var ui = settings.Get("UI");
-                IInteractable userInterface = GetUserInteface(ui, result);
+                var userInterface = GetUserInteface(ui, result);
                 try
                 {
-                    DirectoriesComparator comparator = new DirectoriesComparator(firstDir, secondDir, userInterface);
+                    var comparator = new DirectoriesComparator(firstDir, secondDir, userInterface);
                     comparator.Compare();
                 }
                 catch (ArgumentException e)

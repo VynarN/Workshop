@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Text;
 using Logger;
 namespace Workshop
 {
@@ -9,6 +7,9 @@ namespace Workshop
     {
         static void LoggerDemo()
         {
+            var config = new Configuration(LevelOfDetalization.INFO, (Directory.GetCurrentDirectory() + "\\TestLogger.txt"));
+            var logger = new MyLogger(config);
+
             try
             {
                 int a = 1;
@@ -16,9 +17,10 @@ namespace Workshop
                 int c = a / b;
             }catch(ArithmeticException e)
             {
-                Logger.Log(e);
+                logger.Log(e);
             }
-            //mylogger.TurnOff();
+
+            //logger.TurnOff();
             try
             {
                 string str = null;
@@ -26,9 +28,10 @@ namespace Workshop
             }
             catch(Exception e)
             {
-                Logger.Log(e);
+                logger.Log(e);
             }
-            //mylogger.TurnOn();
+
+            //logger.TurnOn();
             try
             {
                 int[] arr = new int[3];
@@ -36,9 +39,9 @@ namespace Workshop
             }
             catch (Exception e)
             {
-                Logger.Log(e);
+                logger.Log(e);
             }
-            string errors = Logger.ReadLog();
+            string errors = logger.ReadLog();
             Console.WriteLine(errors);
         }
             
